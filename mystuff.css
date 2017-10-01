@@ -1,0 +1,147 @@
+
+body {
+    background: rgb(30,87,153);
+background: -moz-linear-gradient(-45deg, rgba(30,87,153,1) 0%, rgba(41,137,216,1) 50%, rgba(32,124,202,1) 51%, rgba(125,185,232,1) 100%);
+background: -webkit-linear-gradient(-45deg, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%);
+background: linear-gradient(135deg, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=1 );
+    background-position: top;
+    text-align: center;
+    font-size: larger;
+    color: black;
+    background-repeat: no-repeat;
+}
+         
+div {
+      
+    flex-wrap: nowrap| wrap | wrap-reverse;
+    text-align: center;
+    
+}
+h1 {
+    color:darkgoldenrod;
+    background-color: background: rgb(226,226,226);
+background: -moz-linear-gradient(-45deg, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+background: -webkit-linear-gradient(-45deg, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%);
+background: linear-gradient(135deg, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=1 );;
+ min-height: .5em;*/   
+}
+/* dissolve  */
+.dissolve {
+  width: 287px;
+  height: 430px;
+  position: relative;
+  overflow: hidden;
+}
+.dissolve .item {
+  position: absolute;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-animation: dissolve 20s linear infinite;
+  -moz-animation: dissolve 20s linear infinite;
+  -ms-animation: dissolve 20s linear infinite;
+  animation: dissolve 20s linear infinite;
+}
+.dissolve .item:nth-child(2) {
+  -webkit-animation-delay: 5s;
+  -moz-animation-delay: 5s;
+  -ms-animation-delay: 5s;
+  animation-delay: 5s;
+}
+.dissolve .item:nth-child(3) {
+  -webkit-animation-delay: 10s;
+  -moz-animation-delay: 10s;
+  -ms-animation-delay: 10s;
+  animation-delay: 10s;
+}
+.dissolve .item:nth-child(4) {
+  -webkit-animation-delay: 15s;
+  -moz-animation-delay: 15s;
+  -ms-animation-delay: 15s;
+  animation-delay: 15s;
+}
+
+@-webkit-keyframes dissolve {
+    0%, 30%, 100% { opacity: 0; }
+    5%, 25% { opacity: 1;}
+}
+@-moz-keyframes dissolve {
+    0%, 30%, 100% { opacity: 0; }
+    5%, 25% { opacity: 1;}
+}
+@-ms-keyframes dissolve {
+    0%, 30%, 100% { opacity: 0; }
+    5%, 25% { opacity: 1;}
+}
+@keyframes dissolve {
+    0%, 30%, 100% { opacity: 0; }
+    5%, 25% { opacity: 1;}
+}
+LESS
+
+/* dissolve  */
+@width:1000px; // width of the carousel
+@height: 430px; // height of the carousel
+@numberOfItems: 4; // the number of items in the carousel
+@visibleItemDuration: 4s; // time during which a carousel item is fully visible
+@transitionDuration: 1s; // duration of the transition between two carousel items
+
+@oneItemDuration: @visibleItemDuration + @transitionDuration;
+@carouselPeriod: @oneItemDuration * @numberOfItems;
+
+.dissolve {
+    width:@width;
+    height: @height;
+    position:relative;
+    overflow: hidden;
+
+.item {
+        position:absolute;
+        left: 0;
+        right:0;
+        opacity: 0;
+
+        -webkit-animation: dissolve @carouselPeriod linear infinite;
+        -moz-animation: dissolve @carouselPeriod linear infinite;
+        -ms-animation: dissolve @carouselPeriod linear infinite;
+        animation: dissolve @carouselPeriod linear infinite;
+
+        &:nth-child(2) {
+            -webkit-animation-delay: @oneItemDuration;
+            -moz-animation-delay: @oneItemDuration;
+            -ms-animation-delay: @oneItemDuration;
+            animation-delay: @oneItemDuration;
+        }
+        &:nth-child(3) {
+            -webkit-animation-delay: 2 * @oneItemDuration;
+            -moz-animation-delay: 2 * @oneItemDuration;
+            -ms-animation-delay: 2 * @oneItemDuration;
+            animation-delay: 2 * @oneItemDuration;
+        }
+        &:nth-child(4) {
+            -webkit-animation-delay: 3 * @oneItemDuration;
+            -moz-animation-delay: 3 * @oneItemDuration;
+            -ms-animation-delay: 3 * @oneItemDuration;
+            animation-delay: 3 * @oneItemDuration;
+        }
+    }
+}
+
+@-webkit-keyframes dissolve {
+    0%, 30%, 100% { opacity: 0; }
+    5%, 25% { opacity: 1;}
+}
+@-moz-keyframes dissolve {
+    0%, 30%, 100% { opacity: 0; }
+    5%, 25% { opacity: 1;}
+}
+@-ms-keyframes dissolve {
+    0%, 30%, 100% { opacity: 0; }
+    5%, 25% { opacity: 1;}
+}
+@keyframes dissolve {
+    0%, 30%, 100% { opacity: 0; }
+    5%, 25% { opacity: 1;}
+}
